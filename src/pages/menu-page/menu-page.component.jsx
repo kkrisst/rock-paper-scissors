@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './menu-page.styles.scss';
 
@@ -8,8 +9,8 @@ const MenuPage = () => {
     <div className='menu-page'>
       <div className='title'>Rock, Paper, Scissors</div>
       <div className='game-modes'>
-        <div className='button'>Player VS CPU</div>
-        <div className='button'>Player VS Player</div>
+        <Link className='button' to='/cpu'>Player VS CPU</Link>
+        <Link className='button' to='/player'>Player VS Player</Link>
       </div>
     </div>
   )
