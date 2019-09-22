@@ -24,8 +24,8 @@ describe('Testing the CPUPage component', () => {
   });
 
   it('expect CPUPage to have 2 Player choices', () => {
-    const gameModeButtons = wrapperWaiting.find('PlayerChoices');
-    expect(gameModeButtons.length).toEqual(2);
+    const playerChoices = wrapperWaiting.find('PlayerChoices');
+    expect(playerChoices.length).toEqual(2);
   });
 
   it('expect CPUPage to only display instructions when it is waiting for a choice', () => {
@@ -40,14 +40,14 @@ describe('Testing the CPUPage component', () => {
     expect(results.length).toEqual(1);
   });
 
-  it('expect CPUPage to display a new game button when it is not waiting for a choice', async () => {
-    const newGameButton1 = wrapperDone.find('.new-game-button');
-    expect(newGameButton1.length).toEqual(1);
+  it('expect CPUPage to display a new game button when it is not waiting for a choice',  () => {
+    const newGameButton = wrapperDone.find('.new-game-button');
+    expect(newGameButton.length).toEqual(1);
   });
 
-  it('expect CPUPage to display a new game button when it is not waiting for a choice', async () => {
-    const newGameButton1 = wrapperDone.find('.new-game-button');
-    expect(newGameButton1.length).toEqual(1);
+  it('expect CPUPage to display a new game button when it is not waiting for a choice',  () => {
+    const newGameButton = wrapperDone.find('.new-game-button');
+    expect(newGameButton.length).toEqual(1);
   });
 
   it('expect CPUPage to calculate victory when the player should win', () => {

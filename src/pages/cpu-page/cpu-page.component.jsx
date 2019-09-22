@@ -53,7 +53,7 @@ class CPUPage extends Component {
     });
   }
 
-  renderResults() {
+  renderResults = () => {
     switch (this.state.results) {
       case 1:
         return <div className='results-value'>You won!</div>;
