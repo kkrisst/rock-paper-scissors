@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Testing the App component expect App to match snapshot 1`] = `ShallowWrapper {}`;
+
 exports[`Testing the App component expect MenuPage to match snapshot 1`] = `ShallowWrapper {}`;

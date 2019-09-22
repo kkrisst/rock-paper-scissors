@@ -8,7 +8,7 @@ describe('Testing the App component', () => {
 
   const wrapper = shallow(<App />);
 
-  it('expect MenuPage to be defined', () => {
+  it('expect App to be defined', () => {
     expect(App).toBeDefined();
   });
 
@@ -18,7 +18,7 @@ describe('Testing the App component', () => {
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  it('expect MenuPage to match snapshot', () => {
+  it('expect App to match snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
