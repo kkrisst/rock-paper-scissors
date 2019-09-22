@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import MenuPage from './pages/menu-page/menu-page.component.jsx';
 import CPUPage from './pages/cpu-page/cpu-page.component.jsx';
+import PlayerPage from './pages/player-page/player-page.component.jsx';
 
 import './App.scss';
 
@@ -14,6 +15,7 @@ function App() {
         <Switch>
           <Route exact path='/' component={MenuPage} />
           <Route exact path='/cpu' component={CPUPage} />
+          <Route exact path='/player' component={PlayerPage} />
         </Switch>
       </BrowserRouter>
     </div>
