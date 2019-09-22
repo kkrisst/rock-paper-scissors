@@ -20,28 +20,28 @@ class CPUPage extends Component {
   onChoice = playerItem => {
     if (this.state.waitingForChoice) {
       const cpuItem = ['rock', 'paper', 'scissors'][Math.floor(Math.random() * 3)];
-      let results = 1;
-      
-      if (playerItem === cpuItem) {
-        results = 3;
-      } else if ( (cpuItem === 'rock' && playerItem === 'scissors') || 
-            (cpuItem === 'paper' && playerItem === 'rock') ||
-            (cpuItem === 'scissors' && playerItem === 'paper')
-      ) {
-        results = 2;
-      }
-
-      console.log(playerItem);
-      console.log(cpuItem);
-      console.log(results);
-
-      this.setState({
-        waitingForChoice: false,
-        playerItem,
-        cpuItem,
-        results
-      });
+      this.calculateResults(playerItem, cpuItem);
     }
+  }
+
+  calculateResults = (playerItem, cpuItem) => {
+    let results = 1;
+      
+    if (playerItem === cpuItem) {
+      results = 3;
+    } else if ( (cpuItem === 'rock' && playerItem === 'scissors') || 
+          (cpuItem === 'paper' && playerItem === 'rock') ||
+          (cpuItem === 'scissors' && playerItem === 'paper')
+    ) {
+      results = 2;
+    }
+    
+    this.setState({
+      waitingForChoice: false,
+      playerItem,
+      cpuItem,
+      results
+    });
   }
 
   startNewGame = () => {
@@ -75,9 +75,9 @@ class CPUPage extends Component {
         <PlayerChoices handleChoice={this.onChoice} interactive={waitingForChoice} selected={playerItem}/>
         {
           waitingForChoice
-          ? (<div className='resultsContainer'>Choose your item to see the results!</div>)
+          ? (<div className='instructions'>Choose your item to see the results!</div>)
           : (
-            <div className='resultsContainer'>
+            <div className='results-container'>
               { this.renderResults() }
               <div className='new-game-button' onClick={this.startNewGame}>New Game</div>
             </div>
