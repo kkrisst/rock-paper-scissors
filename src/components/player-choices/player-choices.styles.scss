@@ -1,0 +1,28 @@
+.player-choices{
+  display: flex;
+  width: 80vw;
+  justify-content: space-around;
+  height: 24vh;
+  margin: 0 auto;
+
+  .choice {
+    width: 20%;
+    height: auto;
+    opacity: 0.3;
+    -webkit-transition: opacity 0.3s;
+    -moz-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+  }
+
+  .selected {
+    opacity: 1;
+  }
+
+  &.interactive {
+
+    .choice:hover {
+      opacity: 1;
+    }
+  }
+}
