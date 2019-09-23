@@ -10,7 +10,7 @@ const Header = () => {
     <div className='header'>
       <Link to='/'>
         <div className="icon">
-          <FontAwesomeIcon icon="caret-left" size={'3x'}/>
+          <FontAwesomeIcon icon="caret-left" size={'2x'}/>
         </div>
         <div className='menu-item'>Back to menu</div>
       </Link>

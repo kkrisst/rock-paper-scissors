@@ -75,7 +75,11 @@ class CPUPage extends Component {
         <Header />
         <div className='content'>
           <div className='title'>Player item</div>
-          <PlayerChoices handleChoice={this.onChoice} interactive={waitingForChoice} selected={playerItem}/>
+          <PlayerChoices
+            handleChoice={this.onChoice}
+            interactive={waitingForChoice}
+            selected={playerItem}
+            showSelected={true} />
           {
             waitingForChoice
             ? (<div className='instructions'>Choose your item to see the results!</div>)
@@ -86,7 +90,11 @@ class CPUPage extends Component {
               </div>
             )
           }
-          <PlayerChoices handleChoice={() => {}} interactive={false} selected={cpuItem} />
+          <PlayerChoices
+            handleChoice={() => ''}
+            interactive={false}
+            selected={cpuItem}
+            showSelected={true} />
           <div className='title'>CPU item</div>
         </div>
       </div>

@@ -48,7 +48,7 @@ class PlayerPage extends Component {
   }
 
   handleKeyPress = event => {
-    if (this.state.waitingForChoice) {
+    if (this.state.waitingForChoice && !this.state.counting) {
       for (const [i, char] of this.player1Keys.entries()) {
         if(event.keyCode === char.toUpperCase().charCodeAt(0)) {
           const player1Item = ['rock', 'paper', 'scissors'][i];
@@ -139,7 +139,12 @@ class PlayerPage extends Component {
         <Header />
         <div className='content'>
           <div className='title'>{`Player 1 item - use '${this.player1Keys[0]}', '${this.player1Keys[1]}' or '${this.player1Keys[2]}' keys to choose`}</div>
-          <PlayerChoices handleChoice={this.onChoice} interactive={false} selected={player1Item}/>
+          <PlayerChoices
+            handleChoice={() => ''}
+            interactive={false}
+            selected={player1Item}
+            showSelected={!waitingForChoice}
+          />
           {
             waitingForChoice
             ? (
@@ -154,7 +159,12 @@ class PlayerPage extends Component {
               </div>
             )
           }
-          <PlayerChoices handleChoice={() => {}} interactive={false} selected={player2Item} />
+          <PlayerChoices
+            handleChoice={() => ''}
+            interactive={false}
+            selected={player2Item}
+            showSelected={!waitingForChoice}
+          />
           <div className='title'>{`Player 2 item - use '${this.player2Keys[0]}', '${this.player2Keys[1]}' or '${this.player2Keys[2]}' keys to choose`}</div>
         </div>
       </div>

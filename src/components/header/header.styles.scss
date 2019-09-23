@@ -1,6 +1,6 @@
 .header {
-  margin: 10px 0 0 10px;
-  height: 47px;
+  margin: 2px 0 0 10px;
+  height: 30px;
 
   a:link {
     text-decoration: none;
@@ -13,12 +13,13 @@
   .icon {
     display: inline-block;
     margin-right: 10px;
+    vertical-align: top;
   }
 
   .menu-item {
     display: inline-block;
     text-transform: uppercase;
     vertical-align: bottom;
-    line-height: 47px;
+    line-height: 30px;
   }
 }

@@ -50,6 +50,25 @@ describe('Testing the PlayerPage component', () => {
     expect(newGameButton.length).toEqual(1);
   });
 
+  it('expect onPlayer1Choice to not be called while the countDown is still running', () => {
+    const wrapperGame = shallow(<PlayerPage />);
+    wrapperGame.setState({
+      waitingForChoice: true,
+      counting: true
+    })
+
+    const spy = jest
+      .spyOn(wrapperGame.instance(), 'onPlayer1Choice')
+      .mockImplementation(() => '')
+
+    let event;
+    event = new KeyboardEvent('keydown', {'keyCode': 65});
+    document.dispatchEvent(event);
+    expect(spy).toHaveBeenCalledTimes(0);
+
+    spy.mockRestore();
+  });
+
   it('expect PlayerPage to call onPlayer1Choice on player 1 keypress correctly', () => {
     const wrapperGame = shallow(<PlayerPage />);
     wrapperGame.setState({

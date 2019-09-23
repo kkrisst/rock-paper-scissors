@@ -17,19 +17,25 @@ describe('Testing the PlayerChoices component', () => {
   });
 
   it('expect PlayerChoices to have choices', () => {
-    const gameModeButtons = wrapper.find('.choice');
-    expect(gameModeButtons.length).toEqual(3);
+    const choices = wrapper.find('.choice');
+    expect(choices.length).toEqual(3);
   });
 
   it('expect no choice to be selected', () => {
-    const gameModeButtons = wrapper.find('.selected');
-    expect(gameModeButtons.length).toEqual(0);
+    const choices = wrapper.find('.selected');
+    expect(choices.length).toEqual(0);
   });
 
   it('expect one choice to be selected', () => {
-    const wrapper2 = shallow(<PlayerChoices selected={'rock'} />);
-    const gameModeButtons = wrapper2.find('.selected');
-    expect(gameModeButtons.length).toEqual(1);
+    const wrapper2 = shallow(<PlayerChoices selected={'rock'} showSelected={true} />);
+    const choices = wrapper2.find('.selected');
+    expect(choices.length).toEqual(1);
+  });
+
+  it('expect no choice to be selected when showing selected is disabled', () => {
+    const wrapper2 = shallow(<PlayerChoices selected={'rock'} showSelected={false} />);
+    const choices = wrapper2.find('.selected');
+    expect(choices.length).toEqual(0);
   });
 
   it('expect handleChoice to be called on choice click with the correct parameter', () => {

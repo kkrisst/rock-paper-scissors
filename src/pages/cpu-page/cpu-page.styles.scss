@@ -3,24 +3,24 @@
 
   .content {
     text-align: center;
-    margin-top: 4vh;
 
     .title {
-      font-size: 2em;
+      font-size: 3.5vw;
+      margin: 2vh 2vh
     }
   
     .instructions {
       padding: 2vh;
-      min-height: 95px;
+      min-height: 20vh;
     }
   
     .results-container {
       padding: 2vh;
-      min-height: 95px;
+      height: 20vh;
   
       .new-game-button {
-        height: 50px;
-        line-height: 50px;
+        height: 11vh;
+        line-height: 11vh;
         width: 20vw;
         min-width: 150px;
         margin: 10px auto;
