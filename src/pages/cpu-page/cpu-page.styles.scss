@@ -1,40 +1,45 @@
 .cpu-page,
 .player-page {
-  text-align: center;
-  margin-top: 4vh;
 
-  .title {
-    font-size: 2em;
-  }
+  .content {
+    text-align: center;
+    margin-top: 4vh;
 
-  .instructions {
-    padding: 2vh;
-    min-height: 95px;
-  }
-
-  .results-container {
-    padding: 2vh;
-    min-height: 95px;
-
-    .new-game-button {
-      height: 50px;
-      line-height: 50px;
-      width: 20vw;
-      min-width: 150px;
-      margin: 10px auto;
-      border: 1px solid #bbb;
-      border-radius: 5px;
-      color: #555;
-      -webkit-transition: background-color 0.6s ease-out, color 0.3s, border-color 0.5s;
-      -moz-transition: background-color 0.6s ease-out, color 0.3s, border-color 0.5s;
-      -o-transition: background-color 0.6s ease-out, color 0.3s, border-color 0.5s;
-      transition: background-color 0.6s ease-out, color 0.3s, border-color 0.5s;
+    .title {
+      font-size: 2em;
     }
-
-    .new-game-button:hover {
-      background-color: #d68c0b;
-      color: #fff;
-      border-color: #d68c0b;
+  
+    .instructions {
+      padding: 2vh;
+      min-height: 95px;
+    }
+  
+    .results-container {
+      padding: 2vh;
+      min-height: 95px;
+  
+      .new-game-button {
+        height: 50px;
+        line-height: 50px;
+        width: 20vw;
+        min-width: 150px;
+        margin: 10px auto;
+        border: 1px solid #bbb;
+        border-radius: 5px;
+        color: #555;
+        -webkit-transition: background-color 0.6s ease-out, color 0.3s, border-color 0.5s;
+        -moz-transition: background-color 0.6s ease-out, color 0.3s, border-color 0.5s;
+        -o-transition: background-color 0.6s ease-out, color 0.3s, border-color 0.5s;
+        transition: background-color 0.6s ease-out, color 0.3s, border-color 0.5s;
+        text-transform: uppercase;
+      }
+  
+      .new-game-button:hover {
+        background-color: #d68c0b;
+        color: #fff;
+        border-color: #d68c0b;
+      }
     }
   }
+
 }

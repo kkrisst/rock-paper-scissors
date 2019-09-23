@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import Header from '../../components/header/header.component.jsx';
 import PlayerChoices from '../../components/player-choices/player-choices.component.jsx';
 
 import './cpu-page.styles.scss';
@@ -71,20 +72,23 @@ class CPUPage extends Component {
 
     return (
       <div className='cpu-page'>
-        <div className='title'>Player item</div>
-        <PlayerChoices handleChoice={this.onChoice} interactive={waitingForChoice} selected={playerItem}/>
-        {
-          waitingForChoice
-          ? (<div className='instructions'>Choose your item to see the results!</div>)
-          : (
-            <div className='results-container'>
-              { this.renderResults() }
-              <div className='new-game-button' onClick={this.startNewGame}>New Game</div>
-            </div>
-          )
-        }
-        <PlayerChoices handleChoice={() => {}} interactive={false} selected={cpuItem} />
-        <div className='title'>CPU item</div>
+        <Header />
+        <div className='content'>
+          <div className='title'>Player item</div>
+          <PlayerChoices handleChoice={this.onChoice} interactive={waitingForChoice} selected={playerItem}/>
+          {
+            waitingForChoice
+            ? (<div className='instructions'>Choose your item to see the results!</div>)
+            : (
+              <div className='results-container'>
+                { this.renderResults() }
+                <div className='new-game-button' onClick={this.startNewGame}>New Game</div>
+              </div>
+            )
+          }
+          <PlayerChoices handleChoice={() => {}} interactive={false} selected={cpuItem} />
+          <div className='title'>CPU item</div>
+        </div>
       </div>
     )
   }

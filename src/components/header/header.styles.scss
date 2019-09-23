@@ -1,0 +1,24 @@
+.header {
+  margin: 10px 0 0 10px;
+  height: 47px;
+
+  a:link {
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: #555;
+  }
+
+  .icon {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  .menu-item {
+    display: inline-block;
+    text-transform: uppercase;
+    vertical-align: bottom;
+    line-height: 47px;
+  }
+}

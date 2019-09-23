@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import Header from '../../components/header/header.component.jsx';
 import PlayerChoices from '../../components/player-choices/player-choices.component.jsx';
 
 import './player-page.styles.scss';
@@ -131,28 +132,31 @@ class PlayerPage extends Component {
   }
 
   render () {
-    const { waitingForChoice, player1Item, player2Item, countDown, counting } = this.state;
+    const { waitingForChoice, player1Item, player2Item } = this.state;
 
     return (
       <div className='player-page'>
-        <div className='title'>{`Player 1 item - use '${this.player1Keys[0]}', '${this.player1Keys[1]}' or '${this.player1Keys[2]}' keys to choose`}</div>
-        <PlayerChoices handleChoice={this.onChoice} interactive={false} selected={player1Item}/>
-        {
-          waitingForChoice
-          ? (
-            <div className='countdown-container'>
-              { this.renderCountDown() }
-            </div>
-          )
-          : (
-            <div className='results-container'>
-              { this.renderResults() }
-              <div className='new-game-button' onClick={this.startNewGame}>New Game</div>
-            </div>
-          )
-        }
-        <PlayerChoices handleChoice={() => {}} interactive={false} selected={player2Item} />
-        <div className='title'>{`Player 2 item - use '${this.player2Keys[0]}', '${this.player2Keys[1]}' or '${this.player2Keys[2]}' keys to choose`}</div>
+        <Header />
+        <div className='content'>
+          <div className='title'>{`Player 1 item - use '${this.player1Keys[0]}', '${this.player1Keys[1]}' or '${this.player1Keys[2]}' keys to choose`}</div>
+          <PlayerChoices handleChoice={this.onChoice} interactive={false} selected={player1Item}/>
+          {
+            waitingForChoice
+            ? (
+              <div className='countdown-container'>
+                { this.renderCountDown() }
+              </div>
+            )
+            : (
+              <div className='results-container'>
+                { this.renderResults() }
+                <div className='new-game-button' onClick={this.startNewGame}>New Game</div>
+              </div>
+            )
+          }
+          <PlayerChoices handleChoice={() => {}} interactive={false} selected={player2Item} />
+          <div className='title'>{`Player 2 item - use '${this.player2Keys[0]}', '${this.player2Keys[1]}' or '${this.player2Keys[2]}' keys to choose`}</div>
+        </div>
       </div>
     )
   }
